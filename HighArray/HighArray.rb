@@ -22,7 +22,8 @@ class HighArray
 end
 
 
-my_array = Array.new    #I want to access my HighArray method here, but I'm apparently using this the wrong way for Ruby; can you give me a hint?
+my_array = Array.new    #I want to access my HighArray method here, but I'm apparently using this the wrong way for Ruby; 
+#can you give me a hint?
 
 my_array[0] = 10
 
