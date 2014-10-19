@@ -1,6 +1,7 @@
+
 class HighArray
-	def new_array
-		arr = array.new
+	def HighArray
+		arr = Array.new
 	end
 	
 	def find(searchKey)
@@ -14,8 +15,17 @@ class HighArray
 	end	
 	
 	def insert(value)
-		new_array.insert(value)
+		new_array.push(value)
 	end
 
 	
 end
+
+
+my_array = Array.new    #I want to access my HighArray method here, but I'm apparently using this the wrong way for Ruby; can you give me a hint?
+
+my_array[0] = 10
+
+puts my_array[0]
+
+
