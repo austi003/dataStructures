@@ -11,36 +11,63 @@ class HighArray
 	end
 		
 	def display
-		puts "There are #{@nElems} elements in your array: #{@arr}"
+		puts "There are #{@nElems} elements in your array. They are: "
+		j = 0
+		while j < @nElems
+			puts "#{@arr[j]}"
+			j += 1
+		end
 	end
 
 	def find(searchKey)
-		@arr.each do |value|	
-			if searchKey == value
-				puts "#{value} was found in the array"
+		j=0 
+		while j < @nElems
+			if @arr[j] = searchKey	
+				return true
+				break
+			elsif
+				j == @nElems
+				return false
+				break
+			else
+				j += 1
 			end
 		end
-		
 	end
 
-
+	def delete(value)
+		j = 0
+		while j < @nElems
+			if value == @arr[j]                                
+				k = j
+				while k < @nElems
+					@arr[k] = @arr[k+1]
+					k += 1 
+				end
+				@nElems -= 1 
+			else
+				j += 1
+			end
+		end
+	end
 end
 
 my_array = HighArray.new
-your_array = HighArray.new
 
 my_array.add_element(10)
 my_array.add_element(28)
 my_array.add_element(85)
-my_array.display
-my_array.find(10)
-puts "Done with my_array, now on to your_array"
+my_array.add_element(14)
 
-your_array.add_element(104)
-your_array.add_element(73)
-your_array.add_element(127)
-your_array.display
-your_array.find(10)
+my_array.display
+my_array.delete(85)
+my_array.display
+my_array.delete(12)
+my_array.delete(14)
+my_array.display
+
+
+
 
 
 
