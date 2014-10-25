@@ -22,12 +22,12 @@ class HighArray
 	def find(searchKey)
 		j=0 
 		while j < @nElems
-			if @arr[j] = searchKey	
-				return true
+			if @arr[j] == searchKey	
+				puts "Your searchKey #{searchKey} was found"
 				break
 			elsif
-				j == @nElems
-				return false
+				j == @nElems - 1
+				puts "Sorry, #{searchKey} not found"
 				break
 			else
 				j += 1
@@ -58,13 +58,21 @@ my_array.add_element(10)
 my_array.add_element(28)
 my_array.add_element(85)
 my_array.add_element(14)
-
 my_array.display
+
+my_array.find(85)
+my_array.find(101)
+
 my_array.delete(85)
 my_array.display
+my_array.find(85)
+
 my_array.delete(12)
 my_array.delete(14)
 my_array.display
+my_array.find(14)
+my_array.find(10)
+
 
 
 
