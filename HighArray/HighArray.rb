@@ -2,53 +2,29 @@
 class HighArray
 	def initialize
 		@arr = Array.new
-		@nElems = 0
 	end
 	
 	def add_element(value)
-		@arr[@nElems] = value
-		@nElems += 1
+		@arr.push(value)
 	end
 		
 	def display
-		puts "There are #{@nElems} elements in your array. They are: "
-		j = 0
-		while j < @nElems
-			puts "#{@arr[j]}"
-			j += 1
+		puts "There are #{@arr.length} elements in your array. They are: "
+		@arr.each do|value|
+			puts "#{value}"
 		end
 	end
 
 	def find(searchKey)
-		j=0 
-		while j < @nElems
-			if @arr[j] == searchKey	
-				puts "Your searchKey #{searchKey} was found"
-				break
-			elsif
-				j == @nElems - 1
-				puts "Sorry, #{searchKey} not found"
-				break
-			else
-				j += 1
-			end
+		if @arr.include?(searchKey)
+			puts "#{searchKey} was found"
+		else	
+			puts "#{searchKey} not found"
 		end
 	end
 
 	def delete(value)
-		j = 0
-		while j < @nElems
-			if value == @arr[j]                                
-				k = j
-				while k < @nElems
-					@arr[k] = @arr[k+1]
-					k += 1 
-				end
-				@nElems -= 1 
-			else
-				j += 1
-			end
-		end
+		@arr.delete(value)
 	end
 end
 
@@ -60,6 +36,7 @@ my_array.add_element(85)
 my_array.add_element(14)
 my_array.display
 
+my_array.find(14)
 my_array.find(85)
 my_array.find(101)
 
